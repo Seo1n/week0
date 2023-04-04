@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>JUNGLE RANKING</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -43,10 +43,11 @@ h5{
   
   </head>
   <body>
-<form>
+<form id="logout" action="http://localhost:5000/logout" method="POST">
   <div style="padding-left: 90%; margin: 30px;">
     <button class="button is-link is-outlined">로그아웃</button>
 </div>
+</form>
 <div class="edge">
 <div class="wrap">
       <div class="tile is-parent" style="float: left"  >
@@ -64,11 +65,11 @@ h5{
   </div>
     <div class="outline">
     <button class="button is-danger is-outlined" >공부 그만하기</button>
-    <!-- <h5>페이지 종료시 저장이 되지 않으니 공부 그만하기 버튼을 눌러서 학습을 마쳐주세요!</h5> -->
+  <form id="rank" action="http://localhost:5000/rank" method="POST">
   <div>
     <button class="button is-warning is-light" style="margin-top: 150px;">순위 확인하기</button>
   </div>
-</div>
 </form>
+</div>
 </body>
 </html>

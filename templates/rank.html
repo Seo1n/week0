@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>JUNGLE RANKING</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -13,28 +13,34 @@
         <style>
           
           .table{
-            margin: 20px 100px 0px 400px;
+            margin: 100px 100px 0px 400px;
             width: 800px;
             font-size: 13pt;
           }
           .wrap{
          text-align: center;
           }
+          .ranking{
+          padding-left: 570px;
+
+          }
         </style>
 </head>
   <body>
+    <form id="logout" action="http://localhost:5000/logout" method="POST">
     <div style="padding-left: 90%; margin: 30px;">
     <button class="button is-link is-outlined">로그아웃</button>
+  </form>
   </div>
   <div class="wrap">
     <div style="margin: 30px;">
   <strong style="font-size: 30pt;">순위</strong>
 </div>
-<div>
-<button class="button is-outlined">전체순위</button>
-<button class="button is-danger is-outlined">RED</button>
-<button class="button is-success is-outlined">GREEN</button>
-<button class="button is-info is-outlined">BLUE</button>
+<div class="ranking">
+  <form style= 'width: 100px; float: left;'id="rank" action="http://localhost:5000/rank" method="POST" ><button class="button is-outlined">전체순위</button></form>
+  <form style= 'width: 100px; float: left;'id="red" action="http://localhost:5000/red" method="POST"><button class="button is-danger is-outlined">RED</button></form>
+  <form style= 'width: 100px; float: left;'id="green" action="http://localhost:5000/green" method="POST"><button class="button is-success is-outlined">GREEN</button></form>
+  <form style= 'width: 100px; float: left;'id="blue" action="http://localhost:5000/blue" method="POST"><button class="button is-info is-outlined">BLUE</button></form>
 </div>
 </div>
     <table class="table">
@@ -78,6 +84,5 @@
           <td>이름</td>
           <td>00:00</td>
         </tr>
-        
   </body>
 </html>
