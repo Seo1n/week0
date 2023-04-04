@@ -1,0 +1,130 @@
+<!Doctype html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+.wrap{
+    margin: 100px auto;
+    width: 400px;
+}
+.title{
+    text-align: center;
+}
+.check {
+  margin-left: 10px;
+}
+.btn{
+  margin-top: 50px;
+}
+
+</style>
+<script>
+function signup() {
+let id= $('#setId').val();
+let password= $('#setPassword').val();
+let name = $('#setName').val();
+let classroom = $('#setClass').val();
+
+if (name == '') {
+  alert('이름을 입력하세요')
+} else if (id == '') {
+  alert('아이디를 입력하세요')
+} else if (password == '') {
+  alert('비밀번호를 입력하세요')
+}  else if (classroom == '---') {
+  alert('반을 선택해주세요')
+};
+
+if (password < 8){
+
+}
+}
+</script>
+</head>
+<body>
+    <div class="wrap">
+    <div class="field">
+        <h1 class="title">회원가입</h1>
+        <label class="label">이름</label>
+          <input class="input" id="setName" type="text">
+      </div>
+      <div class="field">
+        <label class="label">아이디</label>
+        <div class="field is-grouped">
+          <input class="input" id="setId" type="text">
+          <button id='checker'class="check button is-link is-light" onclick="">중복체크</button>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">비밀번호</label>
+        <div class="control">
+          <input class="input" id="setPassword" type="text">
+          <h5 style="font-size: 8pt;">비밀번호는 8자리 이상 입력해주세요</h5>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">반 선택</label>
+        <div class="control">
+          <div class="select">
+            <select id="setClass">
+              <option>---</option>
+              <option>레드반</option>
+              <option>블루반</option>
+              <option>그린반</option>
+            </select>
+          </div>
+        </div>
+    </div>
+      
+      <div class="btn field is-grouped">
+        <div class="control">
+          <button class="button is-link" onclick=signup()>가입</button>
+        </div>
+        <div class="control">
+          <button class="button is-link is-light" onclick="location.href= 'index.html'">취소</button>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
+
+ <!-- <div class="field">
+        <label class="label">Username</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input is-success" type="text" placeholder="Text input" value="bulma">
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </div>
+        <p class="help is-success">This username is available</p>
+      </div>
+      
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-exclamation-triangle"></i>
+          </span>
+        </div>
+        <p class="help is-danger">This email is invalid</p>
+      </div> -->
