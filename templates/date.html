@@ -10,18 +10,37 @@
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         crossorigin="anonymous"></script>
-        <style>
-          
-          
-        </style>
-        <script>
-           
-        </script>
-</head>
-  <body>
+<style>
+.wrap{
+  text-align: center;
+}
+.box {
+  margin: 200px;
+}
+	</style>
+  <script>
+       function stopwatch() {
+                if ($("#start").css("display") == "block") {
+                    $("#start").hide();
+                } else {
+                    $("#stop").show();
+                }
+            }
+  </script>
+  </head>
+  <div>
     <div style="padding-left: 90%; margin: 30px;">
-    <button class="button is-link is-outlined">Outlined</button>
+      <button class="button is-link is-outlined">로그아웃</button>
+  </div>
+  <div class="wrap">
+  <div id='stopwatch' class='box'>
+    <div id="time" class="time" style="font-size: 30px;">00:00:00</div>
+    <button class="button is-info">시작</button>
+    <button class="button is-info">중지</button>
+  </div>
+  <div>
+    <button class="button is-danger is-outlined">순위보기</button>
+  </div>
 </div>
-<input type="date">
-  </body>
+</body>
 </html>
