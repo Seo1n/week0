@@ -11,36 +11,64 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         crossorigin="anonymous"></script>
 <style>
+.edge{
+  margin: 100px;
+}
+article{
+  text-align: center;
+  width: 400px;
+  height: 200px;
+  
+}
+.time{
+  font-size: 20pt;
+}
+
+p{
+  margin: 20px;
+  font-size: 30pt;
+}
 .wrap{
+  margin: 150px;
+}
+h5{
+  font-size: 10px;
+  color: red;
+}
+.outline{
+  padding-top: 20%;
   text-align: center;
 }
-.box {
-  margin: 200px;
-}
 	</style>
-  <script>
-       function stopwatch() {
-                if ($("#start").css("display") == "block") {
-                    $("#start").hide();
-                } else {
-                    $("#stop").show();
-                }
-            }
-  </script>
+  
   </head>
-  <div>
-    <div style="padding-left: 90%; margin: 30px;">
-      <button class="button is-link is-outlined">로그아웃</button>
+  <body>
+<form>
+  <div style="padding-left: 90%; margin: 30px;">
+    <button class="button is-link is-outlined">로그아웃</button>
+</div>
+<div class="edge">
+<div class="wrap">
+      <div class="tile is-parent" style="float: left"  >
+        <article class="tile is-child notification is-info">
+          <p class="time">시작시간</p>
+          <p class="timer">00:00</p>
+        </article>
+      </div>
+    <div class="tile is-parent" style="float: right">
+      <article class="tile is-child notification is-info">
+        <p class="time">종료시간</p>
+        <p class="timer">00:00</p>
+      </article>
+    </div>
   </div>
-  <div class="wrap">
-  <div id='stopwatch' class='box'>
-    <div id="time" class="time" style="font-size: 30px;">00:00:00</div>
-    <button class="button is-info">시작</button>
-    <button class="button is-info">중지</button>
-  </div>
+    <div class="outline">
+    <button class="button is-danger is-outlined" >공부 그만하기</button>
+    <!-- <h5>페이지 종료시 저장이 되지 않으니 공부 그만하기 버튼을 눌러서 학습을 마쳐주세요!</h5> -->
   <div>
-    <button class="button is-danger is-outlined">순위보기</button>
+    <button class="button is-warning is-light" style="margin-top: 150px;">순위 확인하기</button>
   </div>
 </div>
+</form>
 </body>
 </html>
