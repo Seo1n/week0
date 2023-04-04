@@ -1,0 +1,163 @@
+<!Doctype html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+.wrap{
+    margin: 100px auto;
+    width: 400px;
+}
+.title{
+    text-align: center;
+}
+.check {
+  margin-left: 10px;
+}
+.btn{
+  margin-top: 50px;
+}
+.id_ok{
+  color: blue;
+  display: none;
+}
+.id_rejected{
+  color: red;
+  display: none;
+}
+</style>
+<script>
+
+
+// function signup() {
+// let id= $('#setId').val();
+// let password= $('#setPassword').val();
+// let name = $('#setName').val();
+// let classroom = $('#setClass').val();
+
+// if (password< 8) {
+//   $('#alert').css("color", "red");
+// } else if (name == '') {
+//   alert('이름을 입력하세요')
+// } else if (id == '') {
+//   alert('아이디를 입력하세요')
+// } else if (password == '') {
+//   alert('비밀번호를 입력하세요')
+// }  else if (classroom == '---') {
+//   alert('반을 선택해주세요')
+// } else {
+  // $.ajax({
+  //                   type: "POST",
+  //                   url: "/signup", 
+  //                   data: {},
+  //                   success: function (response) { 
+  //                       if (response["result"] == "success") {
+  //                           alert("회원가입 완료! 로그인 해주세요.");
+  //                           window.location.reload();
+  //                       } else {
+  //                           alert("서버 오류!")
+  //                       }
+  //                   }
+  //               })
+// }
+
+// }
+
+</script>
+</head>
+<body>
+    <form class="wrap" id="signup" action="http://localhost:5000/login" method="POST">
+    <div class="field">
+        <h1 class="title">회원가입</h1>
+        <label class="label">이름</label>
+          <input class="input" name="name" type="text">
+      </div>
+      <div class="field">
+        <label class="label">아이디</label>
+        <div class="field is-grouped">
+          <input class="input" name="id" type="text">
+          <button id='checker'class="check button is-link is-light">중복체크</button>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">비밀번호</label>
+        <div class="control">
+          <input class="input" name="password" type="text">
+          <h5 style="font-size: 8pt;" id="alert">비밀번호는 8자리 이상 입력해주세요</h5>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">반 선택</label>
+        <div class="control">
+          <div class="select">
+            <select name="classroom">
+              <option>---</option>
+              <option>레드반</option>
+              <option>블루반</option>
+              <option>그린반</option>
+            </select>
+          </div>
+        </div>
+    </div>
+      
+      <div class="btn field is-grouped">
+        <div class="control">
+          <button type= 'submit' class="button is-link">가입</button>
+        </div>
+        <div class="control">
+          <button type='submit' class="button is-link is-light">취소</button>
+        </div>
+      </div>
+    </form>
+    <div>
+    <!-- 여기 부분 맞는지 확실치 않아요 확인해주세요 ㅠ  -->
+      {% with messages = get_flashed_messages() %}
+      {% if name == '' %}
+      <script>
+      alert('{{message}}')
+    </script>
+    {% elif id == '' %}
+    <script>
+      alert('{{message}}')
+    </script>
+     {% elif password == '' %}
+     <script>
+      alert('{{message}}')
+    </script>
+     else if (classroom == '---')
+     <script>
+      alert('{{message}}')
+    </script>
+     {% elif password < 8 %}
+     $('#alert').css("color", "red")
+     {% endif %}
+     {% endwith %}
+    </div>
+</body>
+</html>
+
+
+  <!--  alert 문구
+
+    {% if name == '' %}
+     alert('이름을 입력하세요')
+    {% elif id == '' %}
+ alert('아이디를 입력하세요')
+ {% elif password == '' %}
+ alert('비밀번호를 입력하세요')
+ {% elif classroom == '' %}
+ alert('반을 선택해주세요')
+ {% elif password < 8 %}
+ $('#alert').css("color", "red") -->
