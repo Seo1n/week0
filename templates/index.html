@@ -47,6 +47,24 @@
             }
         </style>
         <script>
+            function checkId() {
+                let id = $("#post-id").val();
+
+                $.ajax({
+                    type: "GET",
+                    url: "/sign/check",
+                    data: {id_give: id},
+                    success: function (resonse) {
+                        if (response["result"] == "success") {
+                            alert("사용 가능한 ID입니다!");
+                            $("#btn-save").attr("disabled",false);
+                        } else {
+                            alert("사용 불가능한 ID입니다!")
+                        }
+                    }
+                })
+            }
+
             function postUser() {
                 let id = $("#post-id").val();
                 let pw = $("#post-pw").val();
@@ -58,14 +76,19 @@
                     url: "/sign",
                     data: {id_give: id, pw_give: pw, name_give: name, class_give: class},
                     success: function (response) {
-                        if (response["result"] == "success") {
-                            alert("로그인 성공!");
-                            // 3. 성공 시 페이지 새로고침하기
-                            window.location.reload();
+                        if len(pw) >= 8 {
+                            if (response["result"] == "success") {
+                                alert("로그인 성공!");
+                                // 3. 성공 시 페이지 새로고침하기
+                                window.location.href('localhost:5000/');
+                            } else {
+                                alert("서버 오류!")
+                            }
                         } else {
-                            alert("서버 오류!")
+                            alert("비밀번호는 8자리 이상 필요합니다.")
                         }
                     }
+
                 })
             }
         </script>
@@ -101,7 +124,8 @@
                         <label for="post-class">class</label>
                         <input id="post-url" class="form-control" placeholder="">
                     </div>
-                    <button type="button" class="btn btn-primary" onclick="postArticle()">저장</button>
+                    <button type="button" class="btn btn-primary" onclick="postArticle()">중복확인</button>
+                    <button type="button" id="btn-save" class="btn btn-primary" onclick="postUser()" disabled="disabled">저장</button>
                 </div>
             </div>
         </div>
