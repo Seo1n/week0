@@ -1,8 +1,8 @@
 <!Doctype html>
 <html lang="ko">
-
     <head>
         <meta charset="utf-8">
+        <title>JUNGLE RANKING</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
@@ -38,47 +38,9 @@
   display: none;
 }
 </style>
-<script>
-
-
-// function signup() {
-// let id= $('#setId').val();
-// let password= $('#setPassword').val();
-// let name = $('#setName').val();
-// let classroom = $('#setClass').val();
-
-// if (password< 8) {
-//   $('#alert').css("color", "red");
-// } else if (name == '') {
-//   alert('이름을 입력하세요')
-// } else if (id == '') {
-//   alert('아이디를 입력하세요')
-// } else if (password == '') {
-//   alert('비밀번호를 입력하세요')
-// }  else if (classroom == '---') {
-//   alert('반을 선택해주세요')
-// } else {
-  // $.ajax({
-  //                   type: "POST",
-  //                   url: "/signup", 
-  //                   data: {},
-  //                   success: function (response) { 
-  //                       if (response["result"] == "success") {
-  //                           alert("회원가입 완료! 로그인 해주세요.");
-  //                           window.location.reload();
-  //                       } else {
-  //                           alert("서버 오류!")
-  //                       }
-  //                   }
-  //               })
-// }
-
-// }
-
-</script>
 </head>
 <body>
-    <form class="wrap" id="signup" action="http://localhost:5000/login" method="POST">
+    <form class="wrap" id="signup" action="/sign" method="POST">
     <div class="field">
         <h1 class="title">회원가입</h1>
         <label class="label">이름</label>
@@ -116,8 +78,9 @@
         </div>
       </div>
     </form>
-    <!-- <div> -->
-    <!-- 여기 부분 맞는지 확실치 않아요 확인해주세요 ㅠ  -->
+</body>
+</html>
+ <!-- <div> -->
       <!-- {% with messages = get_flashed_messages() %}
       {% if name == '' %}
       <script>
@@ -131,18 +94,13 @@
      <script>
       alert('{{message}}')
     </script>
-     else if (classroom == '---')
+      {% elif password == '' %}
      <script>
       alert('{{message}}')
     </script>
-     {% elif password < 8 %}
-     $('#alert').css("color", "red")
      {% endif %}
      {% endwith %}
     </div> -->
-</body>
-</html>
-
 
   <!--  alert 문구
 

@@ -11,14 +11,90 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         crossorigin="anonymous"></script>
         <style>
-    
+            .wrap{
+                text-align: center;
+            }
+            .table{
+              margin: 50px auto;
+              width: 700px;
+            }
+           footer{
+            width: 100%;
+      height: 70px;
+      position: absolute;  
+      bottom: 0;
+      left: 0;
+           }
+           .time_remain{
+            margin: auto;
+            text-align: center;
+           }
         </style>
 </head>
   <body>
-    <form id="logout" action="http://localhost:5000/logout" method="POST">
+    <form id="logout" action="/logout" method="POST">
     <div style="padding-left: 90%; margin: 30px;">
     <button class="button is-link is-outlined">로그아웃</button>
 </div>
 </form>
+
+<div class="wrap">
+<strong style="font-size: 30pt;">내 정보</strong>
+</div>
+<div class="time_remain">
+  <strong>1등이 되려면 남은 시간 : 00:00</strong>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>날짜</th>
+      <th>공부 시작시간</th>
+      <th>공부 종료시간</th>
+    </tr>
+  </thead>
+  <tfoot >
+    <th>총 공부시간</th>
+    <th>00:00</th>
+  </tfoot>
+  <tbody>
+    <tr>
+      <th>2023-04-05</th>
+      <td>00:00</td>
+      <td>00:00</td>
+    </tr>
+    <tr>
+      <th>2023-04-05</th>
+      <td>00:00</td>
+      <td>00:00</td>
+    </tr>
+    <tr>
+      <th>2023-04-05</th>
+      <td>00:00</td>
+      <td>00:00</td>
+    </tr>
+    <tr>
+      <th>2023-04-05</th>
+      <td>00:00</td>
+      <td>00:00</td>
+    </tr>
+    <tr>
+      <th>2023-04-05</th>
+      <td>00:00</td>
+      <td>00:00</td>
+    </tr>
+    <footer>
+      <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+        <a class="pagination-previous">Previous</a>
+        <a class="pagination-next">Next page</a>
+        <ul class="pagination-list">
+          <li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
+          <li><a class="pagination-link" aria-label="Goto page 45">2</a></li>
+          <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">3</a></li>
+          <li><a class="pagination-link" aria-label="Goto page 47">4</a></li>
+          <li><a class="pagination-link" aria-label="Goto page 86">5</a></li>
+        </ul>
+      </nav>
+    </footer>
+    
   </body>
 </html>

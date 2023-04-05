@@ -43,11 +43,13 @@ h5{
   
   </head>
   <body>
-<form id="logout" action="http://localhost:5000/logout" method="POST">
-  <div style="padding-left: 90%; margin: 30px;">
+    <form id="logout" action="/info" method="POST"></form>
+    <div style="padding-left: 80%; margin: 30px;">
+      <button style='width: 100px; float: left; margin-right: 10px;' class="button is-link is-outlined" >내 정보</button>
+      </div>
+      <form id="logout" action="/logout" method="POST"></form>
     <button class="button is-link is-outlined">로그아웃</button>
-</div>
-</form>
+  </form>
 <div class="edge">
 <div class="wrap">
       <div class="tile is-parent" style="float: left"  >
