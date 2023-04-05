@@ -15,6 +15,11 @@
             crossorigin="anonymous"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
 <style>
 .wrap{
     margin: 100px auto;
@@ -29,6 +34,22 @@
 .btn{
   margin-top: 50px;
 }
+.jungle {
+            font-size: 40pt;
+            color: white;
+            line-height: 200px;
+
+        }
+        .cover{
+          background-color:#a3e8f7;
+          margin: 0px auto;
+            width: 90%;
+            height: 200px;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+          top: 0;
+        }
+
 </style>
 
 {%with messages = get_flashed_messages()%}
@@ -41,7 +62,12 @@
 
 </head>
 <body>
-    <form class="wrap" id="signup" action="http://localhost:5000/signup" method="POST">
+  <div class="cover">
+    <strong class="jungle">
+      JUNGLE RANKING
+    </strong>
+  </div>
+    <form class="wrap" id="signup" action="/signup" method="POST">
     <div class="field">
         <h1 class="title">회원가입</h1>
         <label class="label">이름</label>
@@ -74,7 +100,6 @@
           </div>
         </div>
     </div>
-      
       <div class="btn field is-grouped">
         <div class="control">
           <button type= 'submit' class="button is-link">가입</button>
