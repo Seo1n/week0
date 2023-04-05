@@ -38,9 +38,16 @@
   display: none;
 }
 </style>
+{%with messages = get_flashed_messages()%}
+{%if messages %}
+  <script type="text/javascript">
+    alert("{{messages[-1]}}");
+  </script>
+  {%endif%}
+{%endwith%}
 </head>
 <body>
-    <form class="wrap" id="signup" action="/sign" method="POST">
+    <form class="wrap" id="signup" action="/signup" method="POST">
     <div class="field">
         <h1 class="title">회원가입</h1>
         <label class="label">이름</label>
@@ -80,37 +87,3 @@
     </form>
 </body>
 </html>
- <!-- <div> -->
-      <!-- {% with messages = get_flashed_messages() %}
-      {% if name == '' %}
-      <script>
-      alert('{{message}}')
-    </script>
-    {% elif id == '' %}
-    <script>
-      alert('{{message}}')
-    </script>
-     {% elif password == '' %}
-     <script>
-      alert('{{message}}')
-    </script>
-      {% elif password == '' %}
-     <script>
-      alert('{{message}}')
-    </script>
-     {% endif %}
-     {% endwith %}
-    </div> -->
-
-  <!--  alert 문구
-
-    {% if name == '' %}
-     alert('이름을 입력하세요')
-    {% elif id == '' %}
- alert('아이디를 입력하세요')
- {% elif password == '' %}
- alert('비밀번호를 입력하세요')
- {% elif classroom == '' %}
- alert('반을 선택해주세요')
- {% elif password < 8 %}
- $('#alert').css("color", "red") -->

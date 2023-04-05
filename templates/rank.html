@@ -55,38 +55,41 @@
       </thead>
       <tfoot>
         <tr>
-          <th>(내순위)</th>
-          <th>(내이름)</th>
-          <th>(내공부시간)</th>
+          {% if user %}
+          <th>{{ rank }}</th>
+          <th>{{ name }}</th>
+          <th>{{ total }}</th>
+          {% endif %}
         </tr>
       </tfoot>
       <tbody>
-        {% for name, time in range(rank[1], rank[6]) %}
+      
         <tr>
-        
+          {% for name, total in rank %}
           <th>1</th>
-          <td></td>
-          <td></td>
+          <td>{{ name }}</td>
+          <td>{{ total }}</td>
         </tr>
         <tr>
           <th>2</th>
           <td>{{ name }}</td>
-          <td>{{ time }}</td>
+          <td>{{ total }}</td>
         </tr>
         <tr>
           <th>3</th>
           <td>{{ name }}</td>
-          <td>{{ time }}</td>
+          <td>{{ total }}</td>
         </tr>
         <tr>
           <th>4</th>
           <td>{{ name }}</td>
-          <td>{{ time }}</td>
+          <td>{{ total }}</td>
         </tr>
         <tr>
           <th>5</th>
           <td>{{ name }}</td>
-          <td>{{ time }}</td>
+          <td>{{ total }}</td>
+          {% endfor %}
         </tr>
   </body>
 </html>
