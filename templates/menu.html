@@ -1,139 +1,91 @@
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>JUNGLE RANKING</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        crossorigin="anonymous"></script>
-        <style>
-          .wrap{
-       display: flex;
-       justify-content: center;
-       align-items: center;
-          }
-          .btn_wrap{
-  margin-top: 200px;
-  padding: 50px;
-          }
-          .large {
-            color: white;
-            background-color: #686de0;
-            height: 100px;
-            border-radius: 10px;
-            border-color: #686de0;
-            width: 400px;
-            font-size: 20pt;
-          }
-          
-        </style>
-</head>
-  <body>
-    <form id="logout" action="http://localhost:5000/logout" method="POST">
-    <div style="padding-left: 90%; margin: 30px;">
-    <button class="button is-link is-outlined">로그아웃</button>
-</div>
-</form>
-<form id="study" action="http://localhost:5000/study" method="POST">
-    <div class="wrap">
-        <div class="btn_wrap">
-            <button class="large">공부 시작!</button>
-    </div>
-  </form>
-    <form id="rank" action="http://localhost:5000/rank" method="POST">
-    <div class="btn_wrap">
-        <button class="large">순위 보기</button>
-    </div>
-  </form>
-</div>
-  </body>
-</html> -->
-
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>JUNGLE RANKING</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        crossorigin="anonymous"></script>
-        <style>
-          .wrap{
-       display: flex;
-       justify-content: center;
-       align-items: center;
-          }
-          .btn_wrap{
-  margin-top: 200px;
-  padding: 50px;
-          }
-          .large {
-            color: white;
-            background-color: #686de0;
-            height: 100px;
-            border-radius: 10px;
-            border-color: #686de0;
-            width: 400px;
-            font-size: 20pt;
-          }
-          .jungle {
-            font-size: 40pt;
-            color: white;
-            line-height: 200px;
-
-        }
-        .cover{
-          background-color:#a3e8f7;
-          margin: 0px auto;
-            width: 90%;
-            height: 200px;
-            font-family: 'Roboto', sans-serif;
-            text-align: center;
-          top: 0;
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .btn_wrap {
+        margin-top: 200px;
+        padding: 50px;
+      }
+      .bigbtn{
+        color: white;
+        height: 100px;
+        width: 400px;
+        font-size: 20pt;
+      }
+      .jungle {
+        font-size: 40pt;
+        color: white;
+        line-height: 200px;
+      }
+      .cover {
+        background-color: #a3e8f7;
+        margin: 0px auto;
+        width: 90%;
+        height: 200px;
+        font-family: "Roboto", sans-serif;
+        text-align: center;
+        top: 0;
+      }
       .btns {
-        padding-left: 85%; 
+        padding-left: 85%;
         position: absolute;
         top: 30px;
       }
-        </style>
-</head>
+    </style>
+  </head>
   <body>
+
     <div class="cover">
-      <strong class="jungle">
-        JUNGLE RANKING
-      </strong>
+      <strong class="jungle"> JUNGLE RANKING </strong>
     </div>
     <div class="btns">
-    <form id="info" action="/mypage" method="GET">
-      <button style='width: 100px; float: left; ' class="button is-link is-outlined" >내 정보</button>
-    </form>
+      <form id="info" action="/mypage" method="GET">
+        <button
+          style="width: 100px; float: left;"
+          class="button is-link is-outlined"
+        >
+          내 정보
+        </button>
+      </form>
       <form id="logout" action="/logout" method="POST">
-    <button class="button is-link is-outlined" style="float: right; display: inline; margin-top: 20px;">로그아웃</button>
-  </form>   
-  </div>
-<form id="study" action="/studybutton" method="POST">
+        <button
+          class="button is-link is-outlined"
+          style="width: 100px; float: right; margin-top: 20px"
+        >
+          로그아웃
+        </button>
+      </form>
+    </div>
     <div class="wrap">
-        <div class="btn_wrap">
-            <button type="submit" class="large">공부 시작!</button>
+      <form id="study" action="/studybutton" method="POST" class="btn_wrap">
+          <button class="bigbtn button is-link is-light" type="submit" >공부 시작!</button>
+      </form>
+      <form class="btn_wrap" id="rank" action="/rank" method="GET">
+          <button class="bigbtn button is-link is-light" type="submit" >순위 보기</button>
+      </form>
     </div>
-</form>
-    <form id="rank" action="/rank" method="GET">
-    <div class="btn_wrap">
-        <button type="submit" class="large">순위 보기</button>
-    </div>
-  </form>
-</div>
   </body>
 </html>
