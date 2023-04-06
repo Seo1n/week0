@@ -8,8 +8,8 @@ from flask_jwt_extended import (
 
 mypage_bp = Blueprint('mypage', __name__)
 
-client = MongoClient('localhost', 27017) 
-db = client.jungle
+client = MongoClient('mongodb://test:test@localhost',27017)
+db = client.jranking
 
 @mypage_bp.route("/mypage", methods=['GET'])
 def mypage():
@@ -21,7 +21,44 @@ def mypage():
     token = request.cookies.get('refresh_token')
     user = db.users.find_one({'token' : token},{'_id' : False})
     user_id = user['id']
-    cursor = db.times.find({'id': user_id},{'_id':False})
+    total = user['total']
+    cursor = db.times.find({'id': user_id}).sort('_id', -1)
+    
+    # 개인 일일 공부시간 평균
+    timelist = list(db.times.find({'id': user_id},{'_id':False}))
+    temp = []
+    cnt = 0
+    for i in timelist:
+        if i['date'] not in temp:
+            cnt += 1
+            temp.append(i['date'])
+    if cnt != 0:
+        peravg = total // cnt
+    else:
+        peravg = 0
+        
+    # 전체 일일 공부시간 평균
+    users = list(db.users.find({},{'_id':False}))
+    tempavg = 0
+    for i in users:
+        temp_id = i['id']
+        temptotal = i['total']
+        times = list(db.times.find({'id': temp_id},{'_id':False}))
+        temp = []
+        cnt = 0
+        for j in times:
+            if j['date'] not in temp:
+                cnt += 1
+                temp.append(j['date'])
+        if cnt != 0:
+            tempavg += temptotal // cnt
+        else:
+            peravg = 0
+    if len(users) != 0:
+        allavg = tempavg // len(users)
+    else:
+        allavg = 0   
+        
     my_data = []
     for document in cursor:
         my_data.append(document)
@@ -35,7 +72,11 @@ def mypage():
     
     all_data.sort(key=lambda x: x.get('total'),reverse=True)
     number_one = all_data[0]['total'] - user['total']
-    return render_template('mypage.html', mydata = my_data, number_one= number_one)
+    
+    
+    
+    
+    return render_template('mypage.html', mydata = my_data, number_one= number_one, total = total, average = peravg, total_average = allavg)
 
     # 2-2 나의 일일 평균 공부 시간 보여주기
     # 해당 id를 가지고 저장된 모든 데이터를 list로 불러와서,

@@ -1,8 +1,8 @@
 <!Doctype html>
 <html lang="ko">
+
     <head>
         <meta charset="utf-8">
-        <title>JUNGLE RANKING</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
@@ -15,6 +15,11 @@
             crossorigin="anonymous"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
 <style>
 .wrap{
     margin: 100px auto;
@@ -29,7 +34,24 @@
 .btn{
   margin-top: 50px;
 }
+.jungle {
+            font-size: 40pt;
+            color: white;
+            line-height: 200px;
+
+        }
+        .cover{
+          background-color:#a3e8f7;
+          margin: 0px auto;
+            width: 90%;
+            height: 200px;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+          top: 0;
+        }
+
 </style>
+
 {%with messages = get_flashed_messages()%}
 {%if messages %}
   <script type="text/javascript">
@@ -37,8 +59,14 @@
   </script>
   {%endif%}
 {%endwith%}
+
 </head>
 <body>
+  <div class="cover">
+    <strong class="jungle">
+      JUNGLE RANKING
+    </strong>
+  </div>
     <form class="wrap" id="signup" action="/signup" method="POST">
     <div class="field">
         <h1 class="title">회원가입</h1>
@@ -48,13 +76,14 @@
       <div class="field">
         <label class="label">아이디</label>
         <div class="field is-grouped">
-          <input class="input" name="id" type="email">
+          <input class="input" type="email" name="id">
+
         </div>
       </div>
       <div class="field">
         <label class="label">비밀번호</label>
         <div class="control">
-          <input class="input" name="password" type="text">
+          <input class="input" name="password" type="password">
           <h5 style="font-size: 8pt;" id="alert">비밀번호는 8자리 이상 입력해주세요</h5>
         </div>
       </div>
@@ -75,7 +104,11 @@
         <div class="control">
           <button type= 'submit' class="button is-link">가입</button>
         </div>
+        <div class="control">
+        </div>
       </div>
     </form>
+    <div>
+
 </body>
 </html>

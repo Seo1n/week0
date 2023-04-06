@@ -6,8 +6,8 @@ from flask_jwt_extended import (
 
 auth_bp = Blueprint('auth', __name__)
 
-client = MongoClient('localhost', 27017) 
-db = client.jungle
+client = MongoClient('mongodb://test:test@localhost',27017)
+db = client.jranking
     
 # 로그인 기능 구현
 @auth_bp.route('/login', methods=['POST'])
@@ -18,7 +18,7 @@ def login():
     
     if (user == None) or (user['password'] != password) :
         flash('아이디와 패스워드가 일치하지 않습니다.')
-        return redirect("http://127.0.0.1:5000/")
+        return redirect("/")
     else :
         # DB에 access_token, refresh token 생성하기
         access_token = create_access_token(identity=id)
