@@ -4,6 +4,7 @@ from menu import menu_bp
 from mypage import mypage_bp
 from rank import rank_bp
 from times import times_bp
+from slack import slack_bp
 from flask import Flask, render_template,request
 from flask_jwt_extended import (JWTManager)
 
@@ -14,6 +15,7 @@ app.register_blueprint(menu_bp, url_prefix='/')
 app.register_blueprint(mypage_bp, url_prefix='/')
 app.register_blueprint(rank_bp, url_prefix='/')
 app.register_blueprint(times_bp, url_prefix='/')
+app.register_blueprint(slack_bp)
 
 jwt = JWTManager(app)
 # 메인 창
